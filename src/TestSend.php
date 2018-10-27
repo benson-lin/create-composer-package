@@ -1,16 +1,16 @@
 <?php
 
-use MessageTest\Email\EmailSend;
+use BensonlinTest\Url;
 
 class TestSend {
 
-    public function send()
+    public function open($url)
     {
-        EmailSend::sendEmail();
+        Url::open($url);
     }
 }
 $autoload =  '../vendor/autoload.php';
 require $autoload;
 
 $test = new TestSend();
-$test->send();
+$test->open('http://bensonlin.cn/');

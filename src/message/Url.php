@@ -1,14 +1,13 @@
 <?php
 
-namespace MessageTest\Email;
+namespace BensonlinTest;
 
+class Url {
 
-class EmailSend {
-
-    public static function sendEmail() {
+    public static function open($url = '') {
 
         $client = new \GuzzleHttp\Client();
-        $res = $client->request('GET', 'http://baidu.com');
+        $res = $client->request('GET', $url);
         echo $res->getStatusCode();
         echo $res->getHeaderLine('content-type');
         echo $res->getBody();
